@@ -1,0 +1,33 @@
+{% extends "main/base.html" %}
+{% block title %}
+Профиль
+{% endblock %}
+
+{% block content %}
+<html>
+ <head>
+  <meta charset="utf-8">
+  <title>Профиль</title>
+  <style>
+   .text {
+    text-align:  center;
+   }
+   body {
+    background: #333;
+    color: white;
+   }
+  </style>
+ </head>
+ <body>
+    <div class="content-section">
+    <div class="media">
+        <img class="rounded-circle account-img" src="{{ user.profile.image.url }}">
+        <div class="media-body">
+           <h3 class="text-left">{{ user.first_name }} {{ user.username }} {{ user.last_name }}</h3>
+           <p class="text-left">{{ user.email }}</p>
+    </div>
+    </div>
+
+    </div>
+ </body>
+{% endblock content %}
