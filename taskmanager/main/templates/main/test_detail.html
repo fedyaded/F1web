@@ -8,14 +8,19 @@
     color: white;
    }
 </style>
-<h1> {{ project.title }}</h1>
+<h1> {{ product.name }}</h1>
 <div class="row">
     <div class="col-md-8">
-        <img src="{% static main.image %}" alt="" width="100%">
+        <img src="{% static product.image %}" alt="" width="800" height="800">
     </div>
     <div class="col-md-4">
         <h5>О товаре</h5>
-        <p> {{ project.description }}</p>
+        <p> {{ product.description }}</p>
+        <h5>{{ product.price }} $</h5>
+        <a href="#"
+           class="btn btn-outline-secondary button-wapper">
+            В корзину
+        </a>
     </div>
 </div>
 {% endblock %}

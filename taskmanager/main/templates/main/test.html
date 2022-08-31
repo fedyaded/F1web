@@ -8,16 +8,18 @@
     color: white;
    }
 </style>
-<h1>Магазин F1</h1>
+<h1>
+    <p align="center">Магазин F1</p></h1>
 <div class="row">
-{% for project in projects %}
+{% for product in products %}
     <div class="col-md-4">
         <div class="card mb-2">
-            <img class="card-img-top" src="{% static main.image %}">
+            <img class="card-img-top" src="{% static product.image %}">
             <div class="card-body">
-                <h5 class="card-title">{{ project.title }}</h5>
-                <p class="card-text">{{ project.description }}</p>
-                <a href="{% url 'test_detail' project.pk %}"
+                <h5 class="card-title">{{ product.name }}</h5>
+                <h6 class="card-title">{{ product.price }} $</h6>
+                <p class="card-text">{{ product.description }}</p>
+                <a href="{% url 'test_detail' product.pk %}"
                    class="btn btn-outline-secondary button-wapper">
                     Купить
                 </a>

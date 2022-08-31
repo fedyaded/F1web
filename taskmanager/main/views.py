@@ -7,7 +7,7 @@ from django.contrib.auth import login, logout
 from django import forms
 from django.contrib.auth.decorators import login_required
 
-from .models import Task, Project
+from .models import Task, Product
 
 def index (request):
     tasks = Task.objects.order_by("-id")
@@ -23,16 +23,16 @@ def const(request):
     return render (request, "main/const.html")
 
 def test(request):
-    projects = Project.objects.all()
+    products = Product.objects.all()
     context = {
-        'projects': projects
+        'products': products
     }
     return render(request, "main/test.html", context)
 
 def test_detail(request, pk):
-    project = Project.objects.get(pk=pk)
+    product = Product.objects.get(pk=pk)
     context = {
-        'project': project
+        'product': product
     }
     return render(request, 'main/test_detail.html', context)
 
